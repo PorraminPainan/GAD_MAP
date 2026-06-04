@@ -4,9 +4,12 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "vite --config web.vite.config.ts",
-    "buildmap": "tsc && vite build --config buildmap.vite.config.ts",
+    "start": "node node_modules/vite/bin/vite.js --config web.vite.config.ts",
+    "dev": "node node_modules/vite/bin/vite.js --config web.vite.config.ts",
+    "start:local": ".\\.codex-node\\node-v24.16.0-win-x64\\node.exe node_modules/vite/bin/vite.js --config web.vite.config.ts",
+    "dev:local": ".\\.codex-node\\node-v24.16.0-win-x64\\node.exe node_modules/vite/bin/vite.js --config web.vite.config.ts",
+    "buildmap": "node node_modules/typescript/bin/tsc && node node_modules/vite/bin/vite.js build --config buildmap.vite.config.ts",
+    "buildmap:local": ".\\.codex-node\\node-v24.16.0-win-x64\\node.exe node_modules/typescript/bin/tsc && .\\.codex-node\\node-v24.16.0-win-x64\\node.exe node_modules/vite/bin/vite.js build --config buildmap.vite.config.ts",
     "upload": "npm run buildmap && upload-wa-map",
     "upload-only": "upload-wa-map"
   },
